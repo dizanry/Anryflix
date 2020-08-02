@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoIframeResponsive from './components/VideoIframeResponsive';
 import { BannerMainContainer, ContentAreaContainer, WatchButton } from './styles';
+import dadosIniciais from "../../data/dados_iniciais.json";
 
 function getYouTubeId(youtubeURL) {
   return youtubeURL
@@ -11,10 +12,16 @@ function getYouTubeId(youtubeURL) {
 }
 
 export default function BannerMain({
-  videoTitle,
-  videoDescription,
-  url,
+  data
 }) {
+
+  const category = data.categorias[Math.floor(Math.random() * data.categorias.length)];
+  const video = category.videos[Math.floor(Math.random() * category.videos.length)];
+
+  const videoTitle = video.titulo;
+  const videoDescription = video.subtitle;
+  const url = video.url;
+
   const youTubeID = getYouTubeId(url);
   const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
 
@@ -22,6 +29,7 @@ export default function BannerMain({
     <BannerMainContainer backgroundImage={bgUrl}>
       <ContentAreaContainer>
         <ContentAreaContainer.Item>
+
           <ContentAreaContainer.Title>
             {videoTitle}
           </ContentAreaContainer.Title>

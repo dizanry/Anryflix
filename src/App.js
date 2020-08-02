@@ -8,45 +8,27 @@ import Footer from './components/Footer';
 
 
 function App() {
+    let carousels = [];
+    for(let i=0; i < dadosIniciais.categorias.length; i++){
+        let categoria = dadosIniciais.categorias[i];
+        carousels.push(<Carousel
+            ignoreFirstVideo
+            category={categoria}
+        />);
+    }
+
   return (
     
     <div style={{background: "#141414"}}>
         <Menu />
 
         <BannerMain
-        videoTitle={dadosIniciais.categorias[0].videos[0].titulo[0]} 
-        url={dadosIniciais.categorias[0].videos[0].url}
-        videoDescription={"O que é front-end"} />
+        data={dadosIniciais} />
 
-        <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[0]}
-        />
 
-        <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[1]}
-        />
+        {carousels}
 
-        <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[2]}
-        />
 
-        <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[3]}
-        />
-
-        <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[4]}
-        />
-
-        <Carousel 
-        ignoreFirstVideo
-        category={dadosIniciais.categorias[5]}
-        />
         
         <Footer
          
