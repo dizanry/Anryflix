@@ -1,18 +1,18 @@
 import React from 'react';
-import './App.css';
-import Menu from './components/Menu';
-import dadosIniciais from './data/dados_iniciais.json';
-import BannerMain from './components/BannerMain';
-import Carousel from './components/Carousel';
-import Footer from './components/Footer';
+import '../../App.css';
+import Menu from '../../components/Menu';
+import dadosIniciais from '../../data/dados_iniciais.json';
+import BannerMain from '../../components/BannerMain';
+import Carousel from '../../components/Carousel';
+import Footer from '../../components/Footer';
 
 
-function App() {
+function Home() {
     let carousels = [];
     for(let i=0; i < dadosIniciais.categorias.length; i++){
         let categoria = dadosIniciais.categorias[i];
         carousels.push(<Carousel
-            ignoreFirstVideo
+            //ignoreFirstVideo
             category={categoria}
         />);
     }
@@ -37,4 +37,4 @@ function App() {
     </div>
   );
 }
-export default App;
+export default Home;
