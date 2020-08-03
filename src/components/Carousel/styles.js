@@ -41,36 +41,7 @@ export const VideoCardList = styled.ul`
   display: flex;
   overflow-x: auto;
   flex-direction: row;
-  transition: all 1s ease;
-  width: 95%;
-  
-  ::-webkit-scrollbar {
-  width: 15px;
-  transition: all 1s ease;
-  }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-  transition: all 1s ease;
-  }
- 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-  background: red; 
-  border-radius: 10px;
-  transition: all 1s ease;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-  transition: all 1s ease;
-  }
-  li {
-    margin-right: 16px;
-  }
 `;
 
 export const VideoCardGroupContainer = styled.section`
